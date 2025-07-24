@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class ContainerCounterVisual : MonoBehaviour
 {
-
     private const string OPEN_CLOSE = "OpenClose";
-    // Start is called before the first frame update
     [SerializeField] private ContainerCounter containerCounter;
+    
     private Animator animator;
 
-    private void Awake(){
+    private void Awake() {
         animator = GetComponent<Animator>();
     }
-    private void Start(){
+    private void Start() {
         containerCounter.OnPlayerGrabbedObject += ContainerCounter_OnPlayerGrabbedObject;
     }
     private void ContainerCounter_OnPlayerGrabbedObject(object sender, System.EventArgs e) {
